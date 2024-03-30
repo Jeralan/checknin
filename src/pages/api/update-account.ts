@@ -17,7 +17,6 @@ const updateAccount = async (email: string, username: string, list: boolean): Pr
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'POST') {
-    console.log('Saving user input:', req.body)
     const {email, username, list} = req.body;
     try {
       const result = await updateAccount(email, username, list);

@@ -14,7 +14,7 @@ const CheckIn: NextPage = () => {
     const { id } = router.query;
     const [thread, setThread] = useState<OutputData>();
     const [textValue, setTextValue] = useState('');
-    const url = `https://checknin.up.railway.app/checkin/${id}/view`;
+    const url = `https://checknin.net/checkin/${id}/view`;
 
     useEffect(() => {fetchThread(id?.toString() || null)}, [session, router]);
     const fetchThread = (id : string | null) => {

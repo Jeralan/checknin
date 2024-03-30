@@ -30,8 +30,7 @@ const generateAction = async (req: NextApiRequest, res: NextApiResponse) => {
     });
 
     const basePromptOutput = baseCompletion.data.choices[0].message?.content;
-    console.log(baseCompletion.data.choices[0].message?.content);
-
+    
     res.status(200).json({ success: true, output: basePromptOutput });
   } catch(error) {
     res.status(500).json({ success: false, message: (error as Error).message });

@@ -28,10 +28,8 @@ const Header = () => {
       var accountNum = 0
       var checkNum = 0
       for (var checkin of pastCheckins) {
-        console.log(checkNum,accountNum)
         checkNum += 1+(checkin.replies?.length ?? 0)
         accountNum += account.notifs ? (account.notifs[checkin._id] ?? 0) : 0
-        console.log(checkNum,accountNum)
       }
       setCheckinNotifs(checkNum-accountNum)
     }

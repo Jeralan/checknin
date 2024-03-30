@@ -3,8 +3,6 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import clientPromise from '../../../lib/mongodb';
 
 const savePod = async (email: string, name: string): Promise<string> => {
-  console.log('Saving user input:', email, name); // Add this log
-  
   try {
         const newPod = {userId: email, name: name, linkAccess: false, shared: [email]}
         const client = await clientPromise;
