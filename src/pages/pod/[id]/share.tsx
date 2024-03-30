@@ -14,7 +14,7 @@ const PodShare: NextPage = () => {
     const { id } = router.query;
     const [pod, setPod] = useState<Pod>();
     const [textValue, setTextValue] = useState('');
-    const url = `https://checknin.up.railway.app/pod/${id}/view`;
+    const url = `https://checknin.net/pod/${id}/view`;
 
     useEffect(() => {fetchPod(id?.toString() || null)}, [session, router]);
 

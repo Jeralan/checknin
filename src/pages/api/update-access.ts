@@ -18,7 +18,6 @@ const updateAccess = async (collectionName: string, id: string, linkAccess: bool
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'POST') {
-    console.log('Saving user input:', req.body)
     const {collection, id, linkAccess} = req.body;
     try {
       const result = await updateAccess(collection,id,linkAccess);

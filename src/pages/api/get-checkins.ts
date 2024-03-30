@@ -11,8 +11,13 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
       const checkins = await collection
         .find({ userId: userId })
-        .sort({ timeStamp: -1 }) // Sort by timeStamp in descending order
         .toArray();
+
+      checkins.sort((a, b) => {
+        const dateA = new Date(a.timeStamp).getTime();
+        const dateB = new Date(b.timeStamp).getTime();
+        return dateB - dateA;
+      })
 
       res.status(200).json({ success: true, checkins });
     } catch (error) {

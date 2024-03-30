@@ -123,7 +123,6 @@ const Home: NextPage = () => {
     }
     setNumberValue(null);
     if (ninResponse) {
-      console.log("Calling OpenAI...");
       const response = await fetch('/api/generate', {
         method: 'POST',
         headers: {
@@ -133,7 +132,6 @@ const Home: NextPage = () => {
       });
       const data = await response.json();
       const output = data.output;
-      console.log("OpenAI replied...", output);
       inputData.replies.push(["Nin",output])
     } else {
       fetch('/api/add-pod', {

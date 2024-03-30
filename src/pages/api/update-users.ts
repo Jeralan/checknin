@@ -26,7 +26,6 @@ const updateUsers = async (collectionName: string, id: string, user: string): Pr
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'POST') {
-    console.log('Saving user input:', req.body)
     const {collection, id, user } = req.body;
     try {
       const result = await updateUsers(collection, id, user);

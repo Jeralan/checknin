@@ -4,7 +4,6 @@ import clientPromise from '../../../lib/mongodb';
 import { InputData } from './types'; 
 
 const saveUserInput = async (inputData: InputData): Promise<boolean> => {
-  console.log('Saving user input:', inputData); // Add this log
   
   try {
         const client = await clientPromise;

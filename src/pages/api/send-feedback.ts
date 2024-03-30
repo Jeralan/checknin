@@ -3,7 +3,6 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import clientPromise from '../../../lib/mongodb';
 
 const saveUserInput = async (text: string): Promise<boolean> => {
-  console.log('Saving user input:', text); // Add this log
   
   try {
         const client = await clientPromise;

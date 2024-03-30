@@ -19,7 +19,6 @@ const updateNotifs = async (id: string, userId: string, notifs: number): Promise
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'POST') {
-    console.log('Saving user input:', req.body)
     const {id, userId, notifs} = req.body;
     try {
       const result = await updateNotifs(id, userId, notifs);
